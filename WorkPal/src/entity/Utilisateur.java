@@ -1,15 +1,19 @@
 package entity;
 
 public class Utilisateur {
-    public String full_name;
+    public long getId;
+    private Long id;
+    public String fullName;
     private String email;
     private String password;
     private String phoneNumber;
     private String address;
     private Role role;
 
-    public Utilisateur(String full_name, String email , String password , String phoneNumber, String address , Role role) {
-        this.full_name = full_name;
+
+    public Utilisateur(Long id, String fullName, String email, String password, String phoneNumber, String address, Role role) {
+        this.id = id;
+        this.fullName = fullName;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
@@ -17,16 +21,26 @@ public class Utilisateur {
         this.role = role;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public Long getId() {
+        return id;
     }
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public String getFull_name() {
+        return fullName;
+    }
+
+    public void setFull_name(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -34,6 +48,7 @@ public class Utilisateur {
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -41,6 +56,7 @@ public class Utilisateur {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -48,6 +64,7 @@ public class Utilisateur {
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -55,6 +72,7 @@ public class Utilisateur {
     public Role getRole() {
         return role;
     }
+
     public void setRole(Role role) {
         this.role = role;
     }
