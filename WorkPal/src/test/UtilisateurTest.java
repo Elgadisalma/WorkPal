@@ -28,12 +28,15 @@ public class UtilisateurTest {
 
             switch (choix){
                 case 1:
-                    saveUser(utilisateurService,scanner);
+                    createUser(scanner, utilisateurService);
                     break;
-                case 2:
-                    updateUser(utilisateurService, scanner);
+                default:
+                    System.out.println("Votre choix introuvable");
             }
 
+        }
+        private void createUser(){
+            
         }
     }
 }
