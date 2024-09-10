@@ -13,5 +13,6 @@ public interface UtilisateurRepository {
     void deleteById(Long id);
     List<Utilisateur> findAll();
     Optional<Utilisateur> findByName(String fullName);
+    void login(String email, String password);
 
 }
