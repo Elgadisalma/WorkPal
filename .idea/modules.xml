@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WorkPal.iml" filepath="$PROJECT_DIR$/WorkPal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WorkPal.iml" filepath="$PROJECT_DIR$/.idea/WorkPal.iml" />
     </modules>
   </component>
 </project>

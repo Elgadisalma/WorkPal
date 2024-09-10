@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a33c2e99-f233-437e-bb0f-3506baf4a89e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/WorkPal.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/config/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Abonnement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Espace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Paiement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/SupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/entity/Utilisateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/repository/UtilisateurRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/repository/impl/UtilisateurRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/service/UtilisateurService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkPal/src/main/java/org/example/service/impl/UtilisateurServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/WorkPal/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WorkPal/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/UML/Diagramme de classes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/WorkPal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/config/DatabaseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Abonnement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Espace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Evenement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Paiement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/SupService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/entity/Utilisateur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/repository/UtilisateurRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/repository/impl/UtilisateurRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/service/UtilisateurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/service/impl/UtilisateurServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/test/AuthTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkPal/src/test/UtilisateurTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2lsOgsa6VQ9Do427bxCLWFgr1NS" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a33c2e99-f233-437e-bb0f-3506baf4a89e" name="Changes" comment="" />
+      <created>1725965436269</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725965436269</updated>
+      <workItem from="1725965437968" duration="1277000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/WorkPal/src/main/java/org/example/Main.java</url>
+          <line>5</line>
+          <properties class="org.example.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
