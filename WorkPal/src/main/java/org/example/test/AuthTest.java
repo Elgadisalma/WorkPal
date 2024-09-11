@@ -4,7 +4,9 @@ import org.example.entity.Role;
 import org.example.entity.Utilisateur;
 import org.example.repository.UtilisateurRepository;
 import org.example.repository.impl.UtilisateurRepositoryImpl;
+import org.example.service.AuthService;
 import org.example.service.UtilisateurService;
+import org.example.service.impl.AuthServiceImpl;
 import org.example.service.impl.UtilisateurServiceImpl;
 
 import java.sql.SQLException;
@@ -18,11 +20,11 @@ public class AuthTest {
         try {
             utilisateurRepository = new UtilisateurRepositoryImpl();
         } catch (SQLException e) {
-            System.out.println("Database connection error: " + e.getMessage());
+            System.out.println("Database connection error" + e.getMessage());
             return;
         }
 
-        UtilisateurService utilisateurService = new UtilisateurServiceImpl(utilisateurRepository);
+        AuthService authService = new AuthServiceImpl(utilisateurRepository);
 
         while (true) {
             System.out.println("Gestion des utilisateurs :");
@@ -35,10 +37,10 @@ public class AuthTest {
 
             switch (choix) {
                 case 1:
-                    register(utilisateurService, scanner);
+                    register(authService, scanner);
                     break;
                 case 2:
-                    login(utilisateurService, scanner);
+                    login(authService, scanner);
                     break;
                 case 0:
                     System.out.println("hh");
@@ -49,7 +51,7 @@ public class AuthTest {
             }
         }
     }
-    private static void register(UtilisateurService utilisateurService, Scanner scanner)
+    private static void register(AuthService authService, Scanner scanner)
     {
         System.out.println("S'enregistrer :");
         System.out.print("Full Name: ");
@@ -66,11 +68,11 @@ public class AuthTest {
         Role role = Role.member;
 
         Utilisateur newUser = new Utilisateur(fullName, email, password, address, phoneNumber, role);
-        utilisateurService.saveUser(newUser);
+        authService.register(newUser);
         System.out.println("Enregistre avec succes.");
     }
 
-    private static void login(UtilisateurService utilisateurService, Scanner scanner)
+    private static void login(AuthService authService, Scanner scanner)
     {
         System.out.println("Se connecter :");
         System.out.print("Email: ");
@@ -78,6 +80,14 @@ public class AuthTest {
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
+        authService.login(email, password);
 
+        if (authService.isUserLoggedIn()) {
+            System.out.println("Connexion réussie !");
+            Utilisateur currentUser = authService.getCurrentUser();
+            System.out.println("Bienvenue, " + currentUser.getFull_name());
+        } else {
+            System.out.println("Échec de la connexion. Veuillez vérifier vos identifiants.");
+        }
     }
 }

@@ -7,4 +7,5 @@ public interface AuthService {
     void login(String email, String password);
     void logout();
     boolean isUserLoggedIn();
+    Utilisateur getCurrentUser();
 }

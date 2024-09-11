@@ -110,26 +110,36 @@ public class UtilisateurRepositoryImpl implements UtilisateurRepository {
     }
 
     @Override
-    public void login(String email, String password) {
+    public Optional<Utilisateur> login(String email, String password) {
         final String query = "SELECT * FROM " + tableName + " WHERE email = ? AND password = ?";
         try (final PreparedStatement stmt = connection.prepareStatement(query)) {
+
             stmt.setString(1, email);
             stmt.setString(2, password);
+
             final ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                Long id = rs.getLong("id");
-                String fullName = rs.getString("full_name");
-                String phoneNumber = rs.getString("phone_number");
-                String address = rs.getString("address");
-                Role role = Role.valueOf(rs.getString("role"));
-            }   else {
-                System.out.println("error");
+                Utilisateur utilisateur = new Utilisateur(
+                        rs.getLong("id"),
+                        rs.getString("full_name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("phone_number"),
+                        rs.getString("address"),
+                        Role.valueOf(rs.getString("role"))
+                );
+                return Optional.of(utilisateur);
+
+            } else {
+                System.out.println("Email ou mot de passe incorrect.");
             }
 
-        }   catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return Optional.empty();
     }
+
 
     @Override
     public Optional<Utilisateur> findByName(String fullName) {
