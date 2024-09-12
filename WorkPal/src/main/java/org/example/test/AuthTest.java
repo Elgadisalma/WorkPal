@@ -5,9 +5,7 @@ import org.example.entity.Utilisateur;
 import org.example.repository.UtilisateurRepository;
 import org.example.repository.impl.UtilisateurRepositoryImpl;
 import org.example.service.AuthService;
-import org.example.service.UtilisateurService;
 import org.example.service.impl.AuthServiceImpl;
-import org.example.service.impl.UtilisateurServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -30,6 +28,7 @@ public class AuthTest {
             System.out.println("Gestion des utilisateurs :");
             System.out.println("1. S'enregistrer :");
             System.out.println("2. Se connecter :");
+            System.out.println("3. Oublier le mot de passe :");
 
             System.out.print("Choisissez votre choix : ");
             int choix = scanner.nextInt();
@@ -83,9 +82,15 @@ public class AuthTest {
         authService.login(email, password);
 
         if (authService.isUserLoggedIn()) {
+
             System.out.println("Connexion réussie !");
             Utilisateur currentUser = authService.getCurrentUser();
             System.out.println("Bienvenue, " + currentUser.getFull_name());
+            if (currentUser.getRole() == Role.moderator) {
+                ModeratorTest.main(null);
+            } else {
+                System.out.println("Rôle inconnu.");
+            }
         } else {
             System.out.println("Échec de la connexion. Veuillez vérifier vos identifiants.");
         }

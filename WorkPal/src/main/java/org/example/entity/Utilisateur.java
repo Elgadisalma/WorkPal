@@ -1,7 +1,6 @@
 package org.example.entity;
 
 public class Utilisateur {
-    public long getId;
     private Long id;
     public String fullName;
     private String email;
