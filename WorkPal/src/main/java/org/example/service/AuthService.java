@@ -7,5 +7,7 @@ public interface AuthService {
     void login(String email, String password);
     void logout();
     boolean isUserLoggedIn();
+    boolean isModerator();
     Utilisateur getCurrentUser();
+    void forgotPassword(String email);
 }
