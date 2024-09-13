@@ -9,5 +9,6 @@ public interface AuthService {
     boolean isUserLoggedIn();
     boolean isModerator();
     Utilisateur getCurrentUser();
+    Boolean isModerator();
     void forgotPassword(String email);
 }

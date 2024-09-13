@@ -1,5 +1,6 @@
 package org.example.service.impl;
 
+import org.example.entity.Role;
 import org.example.entity.Utilisateur;
 import org.example.repository.UtilisateurRepository;
 import org.example.service.AuthService;
@@ -53,14 +54,20 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public boolean isModerator() {
+    public Boolean isModerator() {
+        return currentUser != null && currentUser.getRole() == Role.moderator;
+    }
+
+//
+//    @Override
+//    public void forgotPassword(String email)
+//    {
+//
+//    }
+
+  public boolean isModerator() {
         return currentUser != null && "moderator".equals(currentUser.getRole());
     }
 
-    @Override
-    public void forgotPassword(String email)
-    {
-
-    }
 
 }
