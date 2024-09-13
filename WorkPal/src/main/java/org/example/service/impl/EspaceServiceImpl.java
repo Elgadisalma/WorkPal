@@ -5,6 +5,8 @@ import org.example.repository.EspaceRepository;
 import org.example.service.AuthService;
 import org.example.service.EspaceService;
 
+import java.util.List;
+
 
 public class EspaceServiceImpl implements EspaceService {
 
@@ -57,10 +59,11 @@ public class EspaceServiceImpl implements EspaceService {
 //        return null;
 //    }
 //
-//    @Override
-//    public List<Espace> getSpaces()
-//    {
-//    }
+    @Override
+    public List<Espace> getSpaces()
+    {
+        return espaceRepository.findAll();
+    }
 
 
 }

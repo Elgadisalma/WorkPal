@@ -10,6 +10,6 @@ public interface EspaceService {
     void deleteEspace(Long id);
     void updateEspace(Espace espace, Long id);
 //    Optional<Espace> getSpace(String spaceName);
-//    List<Espace> getSpaces();
+    List<Espace> getSpaces();
 
 }

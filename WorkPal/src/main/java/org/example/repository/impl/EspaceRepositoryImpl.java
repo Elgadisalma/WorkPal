@@ -2,11 +2,13 @@ package org.example.repository.impl;
 
 import org.example.config.DatabaseConnection;
 import org.example.entity.Espace;
+import org.example.entity.EspaceType;
+import org.example.entity.Role;
+import org.example.entity.Utilisateur;
 import org.example.repository.EspaceRepository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -77,12 +79,35 @@ public class EspaceRepositoryImpl implements EspaceRepository {
     @Override
     public List<Espace> findAll()
     {
-        return List.of();
+        final String query = "SELECT * FROM " + tableName;
+        final List<Espace> espaces = new ArrayList<>();
+        try (final Statement stmt = connection.createStatement()) {
+            final ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                Espace espace = mapResultSetToEspace(rs);
+                espaces.add(espace);
+            }
+            return espaces;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public Optional<Espace> findByName(String name)
     {
         return Optional.empty();
+    }
+
+    private Espace mapResultSetToEspace(ResultSet rs) throws SQLException
+    {
+        return new Espace(
+                rs.getLong("id"),
+                rs.getString("name"),
+                EspaceType.valueOf(rs.getString("type")),
+                rs.getBoolean("disponibilite"),
+                rs.getString("taille")
+        );
     }
 }

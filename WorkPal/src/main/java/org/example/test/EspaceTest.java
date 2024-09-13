@@ -12,6 +12,7 @@ import org.example.service.impl.AuthServiceImpl;
 import org.example.service.impl.EspaceServiceImpl;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class EspaceTest {
@@ -55,6 +56,7 @@ public class EspaceTest {
                     deleteEspace(espaceService, scanner);
                     break;
                 case 4:
+                    displaySpaces(espaceService);
                     break;
                 case 5:
                     System.exit(0);
@@ -168,5 +170,14 @@ public class EspaceTest {
         Espace espace = new Espace(name, type, disponibilite, taille);
         espaceService.updateEspace(espace, id);
 
+    }
+
+    private static void displaySpaces(EspaceService espaceService)
+    {
+        List<Espace> spaces = espaceService.getSpaces();
+        System.out.println("Liste des espaces :");
+        for (Espace espace : spaces) {
+            System.out.println(espace);
+        }
     }
 }

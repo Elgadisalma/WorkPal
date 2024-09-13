@@ -58,4 +58,14 @@ public class Espace {
         this.taille = taille;
     }
 
+    @Override
+    public String toString() {
+        return "Espace{" +
+                "id=" + id +
+                ", name= " + name  +
+                ", type= " + type +
+                ", disponibilite= " + disponibilite +
+                ", taille= " + taille +
+                '}';
+    }
 }
