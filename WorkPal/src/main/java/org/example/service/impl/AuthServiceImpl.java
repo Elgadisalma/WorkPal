@@ -54,7 +54,8 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public Boolean isModerator() {
+    public Boolean isModerator()
+    {
         return currentUser != null && currentUser.getRole() == Role.moderator;
     }
 
@@ -65,9 +66,9 @@ public class AuthServiceImpl implements AuthService {
 //
 //    }
 
-  public boolean isModerator() {
-        return currentUser != null && "moderator".equals(currentUser.getRole());
-    }
+//  public Boolean isModerator() {
+//        return currentUser != null && "moderator".equals(currentUser.getRole());
+//    }
 
 
 }
