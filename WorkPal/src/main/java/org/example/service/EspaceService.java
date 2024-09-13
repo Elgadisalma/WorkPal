@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface EspaceService {
     void createEspace(Espace espace);
     void deleteEspace(Long id);
-//    void updateSpace(Espace espace);
+    void updateEspace(Espace espace, Long id);
 //    Optional<Espace> getSpace(String spaceName);
 //    List<Espace> getSpaces();
 

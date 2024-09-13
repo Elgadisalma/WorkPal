@@ -47,19 +47,16 @@ public class AuthServiceImpl implements AuthService {
         return currentUser;
     }
 
-<<<<<<< Updated upstream
-=======
     @Override
-    public boolean isModerator() {
+    public Boolean isModerator() {
         return currentUser != null && currentUser.getRole() == Role.moderator;
     }
 
+//
+//    @Override
+//    public void forgotPassword(String email)
+//    {
+//
+//    }
 
-    @Override
-    public void forgotPassword(String email)
-    {
-
-    }
-
->>>>>>> Stashed changes
 }

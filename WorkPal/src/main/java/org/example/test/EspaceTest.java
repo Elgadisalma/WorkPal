@@ -116,4 +116,57 @@ public class EspaceTest {
         espaceService.deleteEspace(id);
         System.out.println("Deleted successfully");
     }
+
+    private static void updateEspace(EspaceService espaceService, Scanner scanner)
+    {
+        System.out.print("ID de l'espace à supprimer: ");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+
+        System.out.print("Nom de l'espace: ");
+        String name = scanner.nextLine();
+        System.out.print("Taille de l'espace: ");
+        String taille = scanner.nextLine();
+
+        System.out.println("Choisissez le type d'espace:");
+        System.out.println("1. Salle");
+        System.out.println("2. Café");
+        System.out.println("3. Jardin");
+        int typeChoix = scanner.nextInt();
+        scanner.nextLine();
+
+        EspaceType type;
+        switch (typeChoix) {
+            case 1:
+                type = EspaceType.salle;
+                break;
+            case 2:
+                type = EspaceType.cafe;
+                break;
+            case 3:
+                type = EspaceType.jardin;
+                break;
+            default:
+                System.out.println("Erreur");
+                return;
+        }
+
+        System.out.println("L'espace est-il disponible ? (1 pour oui, 0 pour non): ");
+        int disponibiliteChoix = scanner.nextInt();
+        scanner.nextLine();
+
+        boolean disponibilite;
+        if (disponibiliteChoix == 1) {
+            disponibilite = true;
+        } else if (disponibiliteChoix == 0) {
+            disponibilite = false;
+        } else {
+            System.out.println("Erreur: choix de disponibilité invalide.");
+            return;
+        }
+
+        Espace espace = new Espace(name, type, disponibilite, taille);
+        espaceService.updateEspace(espace, id);
+
+    }
 }

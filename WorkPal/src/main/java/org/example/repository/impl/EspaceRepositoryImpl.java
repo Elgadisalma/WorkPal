@@ -40,7 +40,22 @@ public class EspaceRepositoryImpl implements EspaceRepository {
     @Override
     public void update(Espace espace)
     {
+        final String query = "UPDATE " + tableName + " SET name = ?, disponibilite = ?, taille = ?, type = ?::espacetype WHERE id = ?";
+        try (final PreparedStatement stmt = connection.prepareStatement(query)) {
+            int count = 1;
+            stmt.setString(count++, espace.getName());
+            stmt.setBoolean(count++, espace.isDisponible());
+            stmt.setString(count++, espace.getTaille());
+            stmt.setString(count++, espace.getType().toString());
+            stmt.setLong(count++, espace.getId());
 
+            int executed = stmt.executeUpdate();
+            if (executed == 0) {
+                throw new SQLException("Failed");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

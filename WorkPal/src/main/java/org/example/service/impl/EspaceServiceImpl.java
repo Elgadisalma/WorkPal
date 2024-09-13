@@ -33,16 +33,23 @@ public class EspaceServiceImpl implements EspaceService {
         {
             espaceRepository.deleteById(id);
             System.out.println("deleted successfully");
+        } else {
+            System.out.println("no access");
         }
-        System.out.println("no access");
     }
-//
-//    @Override
-//    public void updateSpace(Espace espace)
-//    {
-//
-//    }
-//
+
+    @Override
+    public void updateEspace(Espace espace, Long id)
+    {
+        if (authService.isModerator())
+        {
+            espaceRepository.update(espace);
+            System.out.println("Espace modifiee");
+        }else {
+            System.out.println("no access");
+        }
+    }
+
 //    @Override
 //    public Optional<Espace> getSpace(String name)
 //    {
