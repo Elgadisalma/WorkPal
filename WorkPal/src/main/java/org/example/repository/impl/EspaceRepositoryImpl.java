@@ -95,9 +95,22 @@ public class EspaceRepositoryImpl implements EspaceRepository {
     }
 
     @Override
-    public Optional<Espace> findByName(String name)
+    public Optional<Espace> findById(Long id)
     {
-        return Optional.empty();
+        final String query = "SELECT * FROM " + tableName + " WHERE id = ?";
+        try (final PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setLong(1, id);
+            final ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Espace espace = mapResultSetToEspace(rs);
+                return Optional.of(espace);
+            } else {
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Espace mapResultSetToEspace(ResultSet rs) throws SQLException

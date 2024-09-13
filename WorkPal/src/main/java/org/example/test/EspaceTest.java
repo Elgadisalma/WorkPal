@@ -13,6 +13,7 @@ import org.example.service.impl.EspaceServiceImpl;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class EspaceTest {
@@ -59,7 +60,7 @@ public class EspaceTest {
                     displaySpaces(espaceService);
                     break;
                 case 5:
-                    System.exit(0);
+                    afficherEspace(espaceService, scanner);
                     break;
                 case 6:
                     ModeratorTest.main(null);
@@ -176,8 +177,26 @@ public class EspaceTest {
     {
         List<Espace> spaces = espaceService.getSpaces();
         System.out.println("Liste des espaces :");
-        for (Espace espace : spaces) {
+        for (Espace espace : spaces)
+        {
             System.out.println(espace);
         }
     }
+
+    private static void afficherEspace(EspaceService espaceService, Scanner scanner) {
+        System.out.print("ID de l'espace à afficher: ");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+
+        Optional<Espace> optionalEspace = espaceService.getSpace(id);
+
+        if (optionalEspace.isPresent()) {
+            Espace espace = optionalEspace.get();
+            System.out.println("L'espace que vous avez demandé :");
+            System.out.println(espace);
+        } else {
+            System.out.println("Aucun espace trouvé avec l'ID fourni.");
+        }
+    }
+
 }

@@ -12,7 +12,7 @@ public interface EspaceRepository {
     void update(Espace espace);
     void deleteById(Long id);
     List<Espace> findAll();
-    Optional<Espace> findByName(String name);
+    Optional<Espace> findById(Long id);
 
 
 }

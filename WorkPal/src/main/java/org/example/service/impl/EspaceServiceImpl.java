@@ -6,6 +6,7 @@ import org.example.service.AuthService;
 import org.example.service.EspaceService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public class EspaceServiceImpl implements EspaceService {
@@ -53,12 +54,12 @@ public class EspaceServiceImpl implements EspaceService {
         }
     }
 
-//    @Override
-//    public Optional<Espace> getSpace(String name)
-//    {
-//        return null;
-//    }
-//
+    @Override
+    public Optional<Espace> getSpace(Long id)
+    {
+        return espaceRepository.findById(id);
+    }
+
     @Override
     public List<Espace> getSpaces()
     {
