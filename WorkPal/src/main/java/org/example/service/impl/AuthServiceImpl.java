@@ -12,17 +12,20 @@ public class AuthServiceImpl implements AuthService {
     private final UtilisateurRepository userRepository;
     private static Utilisateur currentUser = null;
 
-    public AuthServiceImpl(UtilisateurRepository repository) {
+    public AuthServiceImpl(UtilisateurRepository repository)
+    {
         this.userRepository = repository;
     }
 
     @Override
-    public void register(Utilisateur utilisateur) {
+    public void register(Utilisateur utilisateur)
+    {
         userRepository.save(utilisateur);
     }
 
     @Override
-    public void login(String email, String password) {
+    public void login(String email, String password)
+    {
         Optional<Utilisateur> utilisateur = userRepository.login(email, password);
         if (utilisateur.isPresent()) {
             currentUser = utilisateur.get();
@@ -32,18 +35,21 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public void logout() {
+    public void logout()
+    {
         currentUser = null;
-        System.out.println("Déconnexion réussie !");
+        System.out.println("Logged ou successfully");
     }
 
     @Override
-    public boolean isUserLoggedIn() {
+    public boolean isUserLoggedIn()
+    {
         return currentUser != null;
     }
 
     @Override
-    public Utilisateur getCurrentUser() {
+    public Utilisateur getCurrentUser()
+    {
         return currentUser;
     }
 
@@ -58,5 +64,10 @@ public class AuthServiceImpl implements AuthService {
 //    {
 //
 //    }
+
+  public boolean isModerator() {
+        return currentUser != null && "moderator".equals(currentUser.getRole());
+    }
+
 
 }
