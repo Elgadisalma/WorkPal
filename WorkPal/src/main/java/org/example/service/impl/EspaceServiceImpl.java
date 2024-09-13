@@ -43,6 +43,7 @@ public class EspaceServiceImpl implements EspaceService {
     {
         if (authService.isModerator())
         {
+            espace.setId(id);
             espaceRepository.update(espace);
             System.out.println("Espace modifiee");
         }else {
