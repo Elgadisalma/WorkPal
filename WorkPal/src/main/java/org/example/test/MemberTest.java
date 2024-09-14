@@ -9,15 +9,22 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MemberTest {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        UtilisateurRepository utilisateurRepository = new UtilisateurRepositoryImpl();
-        AuthService authService = new AuthServiceImpl(utilisateurRepository);
+        UtilisateurRepository utilisateurRepository = null;
+        AuthService authService = null;
 
+        try {
+            utilisateurRepository = new UtilisateurRepositoryImpl();
+            authService = new AuthServiceImpl(utilisateurRepository);
+        } catch (SQLException e) {
+            System.out.println("Database connection error: " + e.getMessage());
+            return;
+        }
 
-        while (true)
+        while (authService.isUserLoggedIn())
         {
             System.out.println("Hello Member");
             System.out.println("Menu");
@@ -34,6 +41,7 @@ public class MemberTest {
             switch (choix)
             {
                 case 1:
+                    ReservationTest.main(null);
                     break;
                 case 2:
                     break;
