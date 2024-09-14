@@ -83,4 +83,13 @@ public class Utilisateur {
         this.role = role;
     }
 
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }
